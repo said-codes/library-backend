@@ -13,10 +13,11 @@ public class Library implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(length = 45)
-    private String target;
-    private Integer capacity;
-    @Column(length = 45)
     private String name;
+    @Column(length = 45)
+    private String target;
+    @Column(name = "capacity")
+    private Integer capacity;
     @Column(length = 250)
     private String description;
 
@@ -41,6 +42,13 @@ public class Library implements Serializable {
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
     public String getTarget() {
         return target;
     }
@@ -56,14 +64,14 @@ public class Library implements Serializable {
     public void setCapacity(Integer capacity) {
         this.capacity = capacity;
     }
-
-    public String getName() {
-        return name;
+   public String getDescription() {
+        return description;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDescription(String description) {
+        this.description = description;
     }
+
 
     public Category getCategory() {
         return category;
@@ -73,14 +81,7 @@ public class Library implements Serializable {
         this.category = category;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
+ 
     public List<Message> getMessages() {
         return messages;
     }

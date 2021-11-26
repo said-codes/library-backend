@@ -14,7 +14,7 @@ public class Reservation implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idReservation;
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "YYYY-mm-dd hh:mm:ss")
     private Date startDate;
@@ -40,12 +40,12 @@ public class Reservation implements Serializable {
     @JsonIgnoreProperties("reservation")
     private Score score;
 
-    public Integer getId() {
-        return id;
+    public Integer getIdReservation() {
+        return idReservation;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdReservation(Integer idReservation) {
+        this.idReservation = idReservation;
     }
 
     public Date getStartDate() {
